@@ -1,0 +1,5 @@
+C:\Users\Shanio\SkyDrive\Documents\C#\MyCustomControls\CustomLabelButton\CustomLabelButton\bin\Debug\CustomLabelButton.dll
+C:\Users\Shanio\SkyDrive\Documents\C#\MyCustomControls\CustomLabelButton\CustomLabelButton\bin\Debug\CustomLabelButton.pdb
+C:\Users\Shanio\SkyDrive\Documents\C#\MyCustomControls\CustomLabelButton\CustomLabelButton\obj\Debug\CustomLabelButton.dll
+C:\Users\Shanio\SkyDrive\Documents\C#\MyCustomControls\CustomLabelButton\CustomLabelButton\obj\Debug\CustomLabelButton.pdb
+C:\Users\Shanio\SkyDrive\Documents\C#\MyCustomControls\CustomLabelButton\CustomLabelButton\obj\Debug\CustomLabelButton.csprojResolveAssemblyReference.cache

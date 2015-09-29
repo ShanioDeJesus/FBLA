@@ -1,0 +1,346 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{AC32BAD7-EBF8-42B6-BE96-0A1614F8952F}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>FBLAData</RootNamespace>
+    <AssemblyName>FBLAData</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>ManagedMinimumRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>ManagedMinimumRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CustomFlatButton, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\MyCustomControls\CustomFlatButton\CustomFlatButton\bin\Debug\CustomFlatButton.dll</HintPath>
+    </Reference>
+    <Reference Include="CustomLabelButton, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\MyCustomControls\CustomLabelButton\CustomLabelButton\bin\Debug\CustomLabelButton.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="addMembers.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="addMembers.Designer.cs">
+      <DependentUpon>addMembers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomFlatBox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CustomFlatBox.Designer.cs">
+      <DependentUpon>CustomFlatBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="customTextBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="customBorder.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CustomMessageBox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CustomMessageBox.Designer.cs">
+      <DependentUpon>CustomMessageBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="customPrintPreview.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="customPrintPreview.Designer.cs">
+      <DependentUpon>customPrintPreview.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DataWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DataWindow.Designer.cs">
+      <DependentUpon>DataWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="editChapter.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="editChapter.Designer.cs">
+      <DependentUpon>editChapter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="loadingItem.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="menuForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="menuForm.Designer.cs">
+      <DependentUpon>menuForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="reports.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="reports.Designer.cs">
+      <DependentUpon>reports.cs</DependentUpon>
+    </Compile>
+    <Compile Include="requestLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="requestLogin.Designer.cs">
+      <DependentUpon>requestLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="settings.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="settings.Designer.cs">
+      <DependentUpon>settings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="signInForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="signInForm.Designer.cs">
+      <DependentUpon>signInForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="viewAll.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="viewAll.Designer.cs">
+      <DependentUpon>viewAll.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="addMembers.resx">
+      <DependentUpon>addMembers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomFlatBox.resx">
+      <DependentUpon>CustomFlatBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomMessageBox.resx">
+      <DependentUpon>CustomMessageBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="customPrintPreview.resx">
+      <DependentUpon>customPrintPreview.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DataWindow.resx">
+      <DependentUpon>DataWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="editChapter.resx">
+      <DependentUpon>editChapter.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="menuForm.resx">
+      <DependentUpon>menuForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="reports.resx">
+      <DependentUpon>reports.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="requestLogin.resx">
+      <DependentUpon>requestLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="settings.resx">
+      <DependentUpon>settings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="signInForm.resx">
+      <DependentUpon>signInForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="viewAll.resx">
+      <DependentUpon>viewAll.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\loading.GIF" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\exportsmall.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\importsmall.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logout.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\newsmall.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\printsmall.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\searchandviewSmall.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\settingssmall.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bulkaddsmall.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\chapterSelectSmall.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\viewchapter646464.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SearchEditSmall.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\NewMembersSmall.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SearchEditSmall3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\NewMembersSmall1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\NewMembersSmall3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\chapterInfo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\export2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\import2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\export21.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\import21.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\report.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\report1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\settings.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\report2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\editChapter.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\editChapter2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\selectChapter.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\selectChapter1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\menuBtn2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\menuBtn21.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\menuBtn22.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\max.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\restore.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\restore1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\max1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\close.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\minimize.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\backarrow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\blueloading.GIF" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

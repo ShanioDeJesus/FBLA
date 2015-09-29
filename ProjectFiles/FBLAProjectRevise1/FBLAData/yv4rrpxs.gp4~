@@ -1,0 +1,118 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace FBLAData
+{
+    class customBorder : Control
+    {
+        public Control thisForm { get; set; }
+        public Panel topBorder { get; set; }
+        public Panel leftBorder { get; set; }
+        public Panel rightBorder { get; set; }
+        public Panel bottomBorder { get; set; }
+        public Label maxrestoreBtn { get; set; }
+        Image maxImage { get; set; }
+        Image resImage { get; set; }
+        public customBorder(Control parent, Panel tBorder, Panel lBorder, Panel rBorder, Panel bBorder, Label MaxAndRestoreBtn, Image MaxImage, Image RestoreImage)
+        {
+
+            thisForm = parent;
+            leftBorder = lBorder;
+            topBorder = tBorder;
+            rightBorder = rBorder;
+            bottomBorder = bBorder;
+            maxrestoreBtn = MaxAndRestoreBtn;
+            maxImage = MaxImage;
+            resImage = RestoreImage;
+
+            //config topborder
+            topBorder.Dock = DockStyle.Top;
+            topBorder.SendToBack();
+            topBorder.MouseDown += allBorderMouseDown;
+            topBorder.MouseUp += allBorderMouseUp;
+            topBorder.MouseMove += topBarMove;
+            topBorder.Height = 55;
+
+            //config left
+            leftBorder.Width = 10;
+            leftBorder.Dock = DockStyle.Left;
+            leftBorder.MouseDown += allBorderMouseDown;
+            leftBorder.MouseUp += allBorderMouseUp;
+
+            //config right
+            rightBorder.Width = 10;
+            rightBorder.Dock = DockStyle.Right;
+            rightBorder.MouseDown += allBorderMouseDown;
+            rightBorder.MouseUp += allBorderMouseUp;
+
+            //config bottom
+            bottomBorder.Height = 10;
+            bottomBorder.Dock = DockStyle.Bottom;
+            bottomBorder.MouseDown += allBorderMouseDown;
+            bottomBorder.MouseUp += allBorderMouseUp;
+
+            //Assign handlers to buttons
+            maxrestoreBtn.Click += MaxOrRestore;
+
+        }
+        //Maximize, Restore
+        bool maximized = false;
+        Point restoreLocation;
+        Size restoreSize;
+        private void MaxOrRestore(object sender, EventArgs e)
+        {
+            if (maximized == false)
+            {
+                restoreSize = thisForm.Size;
+                restoreLocation = thisForm.Location;
+                Screen[] screens = Screen.AllScreens;
+                Screen cur = screens[0];
+                foreach (Screen s in screens)
+                {
+                    if (s.WorkingArea.Contains(thisForm.Location))
+                    {
+                        cur = s;
+                        break;
+                    }
+                }
+                thisForm.Location = new Point(cur.WorkingArea.Left, cur.WorkingArea.Top);
+                thisForm.Width = cur.WorkingArea.Width;
+                thisForm.Height = cur.WorkingArea.Height;
+                maximized = true;
+                maxrestoreBtn.Image = resImage;
+            }
+            else
+            {
+                maximized = false;
+                maxrestoreBtn.Image = maxImage;
+                thisForm.Location = restoreLocation;
+                thisForm.Size = restoreSize;
+            }
+
+        }
+
+        private bool isDragging;
+        private Point mouseDownPoint;
+        private void allBorderMouseDown(object sender, MouseEventArgs e)
+        {
+            mouseDownPoint = e.Location;
+            isDragging = true;
+        }
+        private void allBorderMouseUp(object sender, MouseEventArgs e)
+        {
+            isDragging = false;
+        }
+        private void topBarMove(object sender, MouseEventArgs e)
+        {
+            if (isDragging == true)
+            {
+                thisForm.Location = new Point(Cursor.Position.X - mouseDownPoint.X, Cursor.Position.Y - mouseDownPoint.Y);
+            }
+        }
+    }
+}
